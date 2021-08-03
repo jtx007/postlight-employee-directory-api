@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'faker'
+
+
+
+
+10.times {
+    Location.create(state: Faker::Address.state)
+}
+
+20.times {
+    Title.create(jobtitle: Faker::Job.title)
+}
+
+10.times {
+    Department.create(name: Faker::Company.industry)
+}
+
+
+50.times {
+    Employee.create(name: Faker::Name.name, avatar: Faker::Avatar.image, email: Faker::Internet.email, location_id: rand(1..10), title_id: rand(1..20), department_id: rand(1..10) )
+}
