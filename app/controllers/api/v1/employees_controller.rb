@@ -1,3 +1,4 @@
+require 'faker'
 module Api
   module V1
     class EmployeesController < ApplicationController
@@ -6,19 +7,27 @@ module Api
       # GET /employees
       # GET /employees.json
       def index
-        @employees = Employee.all
+
+        if !params[:filter].blank? 
+            @employees = Employee.where("LOWER(name)  LIKE ?  OR LOWER(email) LIKE ?", "%#{params[:filter].downcase}%")
+        else
+          @pagy, @employees = pagy(Employee.all, items: 10, page: params[:page])
+        end
+      
+        
       end
 
       # GET /employees/1
       # GET /employees/1.json
       def show
+        @employee = Employee.find(params[:id])
       end
 
       # POST /employees
       # POST /employees.json
       def create
         @employee = Employee.new(employee_params)
-
+        @employee.avatar = Faker::Avatar.image
         if @employee.save
           render :show, status: :created
         else
@@ -40,6 +49,7 @@ module Api
       # DELETE /employees/1.json
       def destroy
         @employee.destroy
+        render json: {"message": "Employee deleted"}
       end
 
       private

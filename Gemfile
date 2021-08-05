@@ -32,7 +32,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-gem 'will_paginate', '~> 3.1.0'
+  gem 'pagy', '~> 3.5' # omit patch digit and use the latest if possible
+
 gem 'jbuilder', '~> 2.7'
 
 group :development do
