@@ -34,7 +34,7 @@ The api will now be served on http://localhost:3000/.
 
 Here is a visualization of the current database schema. This is subject to change as time goes on
 
-![Database Schema](Schema.png)
+![Database Schema](schema.png)
 
 - I used the [Jbuilder](https://github.com/rails/jbuilder) gem to build out the JSON responses and setup relations between employees and their locations, titles, and departments. The db is setup in a way where as the office expands, a company can easily add more options for locations, job titles, and departments.
 - Employee Result were paginated and managed by the [Pagy](https://github.com/ddnexus/pagy) gem with 10 results per page. 
