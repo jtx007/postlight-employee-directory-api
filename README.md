@@ -9,15 +9,15 @@ The employee directory API for the Postlight code challenge  submission for the 
 This api uses Ruby on Rails to serve a RESTful API to the frontend. I'm using Ruby version 3.0.0 and Rails version 6.1.4. I'm also using PostGres App for Mac as a database GUI so make sure that you have that and PostgresSQL installed on your machine as well.
 
 ### Tech Stack
-- Ruby v3.0.0
-- Rails v6.1.4
-- PostGresSQL
-- ActiveRecord
+- [Ruby 3.0.0](https://www.ruby-lang.org/en/documentation/) 
+- [Rails 6.1.4](https://edgeguides.rubyonrails.org/6_0_release_notes.html)
+- [PostGresSQL/PostGres App](https://postgresapp.com/)
+- [ActiveRecord](https://guides.rubyonrails.org/active_record_basics.html)
 
 
 ### Development
 
-In order to work with this API, turn on your PostGres app instance and then enter the following into your CLI:
+In order to work with this API, turn on your PostGres app instance, ``` cd ``` into the project directory and then enter the following into your CLI:
 
 ```
 bundle install 
