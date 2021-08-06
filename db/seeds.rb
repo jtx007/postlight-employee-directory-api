@@ -25,5 +25,5 @@ require 'faker'
 
 
 50.times {
-    Employee.create(name: Faker::Name.name, avatar: Faker::Avatar.image, email: Faker::Internet.email, location_id: rand(1..10), title_id: rand(1..20), department_id: rand(1..10) )
+    Employee.create(name: Faker::Name.unique.name, avatar: Faker::Avatar.unique.image, email: Faker::Internet.unique.email, location_id: rand(1..10), title_id: rand(1..20), department_id: rand(1..10) )
 }
