@@ -8,7 +8,10 @@
 
 require 'faker'
 
-
+Location.destroy_all()
+Department.destroy_all()
+Title.destroy_all()
+Employee.destroy_all()
 
 
 10.times {

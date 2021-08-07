@@ -11,7 +11,7 @@ module Api
         if !params[:filter].blank? 
             @employees = Employee.where("LOWER(name)  LIKE ?  OR LOWER(email) LIKE ?", "%#{params[:filter].downcase}%")
         else
-          @pagy, @employees = pagy(Employee.all, items: 10, page: params[:page])
+          @pagy, @employees = pagy(Employee.all, items: 9, page: params[:page])
         end
       
         
