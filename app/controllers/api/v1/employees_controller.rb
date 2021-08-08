@@ -4,15 +4,25 @@ module Api
     class EmployeesController < ApplicationController
       before_action :set_employee, only: %i[ show update destroy ]
 
+
+
+      def search
+          if !params[:query].blank?
+            @employees = Employee.search_by_term(params[:query])
+            render :index
+          else                 
+            @pagy, @employees = pagy(Employee.all.order(id: :desc), items: 9, page: 1)
+            render :index          
+          end
+          
+      end
+
       # GET /employees
       # GET /employees.json
       def index
 
-        if !params[:filter].blank? 
-            @employees = Employee.where("LOWER(name)  LIKE ?  OR LOWER(email) LIKE ?", "%#{params[:filter].downcase}%")
-        else
-          @pagy, @employees = pagy(Employee.all, items: 9, page: params[:page])
-        end
+          @pagy, @employees = pagy(Employee.all.order(id: :desc), items: 9, page: params[:page])
+      
       
         
       end
