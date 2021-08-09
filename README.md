@@ -54,7 +54,7 @@ The database has some preliminary data to be seeded courtesy of the [Faker](http
 
 ### Stretch Features
 
-- More robust unit test coverage
+- Unit test coverage
 - Use of Elastic Search or Algolia for better fuzzy searching
 - Use of GraphQL
 - More descriptive error handling
